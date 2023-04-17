@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import google from '../../../img/google.png';
-import github from '../../../img/GitHub-Mark.png';
+import google from '../../../../img/google.png';
+import github from '../../../../img/GitHub-Mark.png';
 
 const Login = () => {
     return (

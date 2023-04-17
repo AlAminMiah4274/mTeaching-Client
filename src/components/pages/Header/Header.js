@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../img/education-icon.png';
+import logo from '../../../img/education-icon.png';
 
 const Header = () => {
     return (
@@ -27,7 +27,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <img className='rounded-full' src={logo} alt="" width={30} />
-                    <Link className="btn btn-ghost normal-case text-3xl pl-2 font-bold">mTeaching</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-3xl pl-2 font-bold">mTeaching</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
