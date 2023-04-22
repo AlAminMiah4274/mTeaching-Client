@@ -14,7 +14,10 @@ const SideNav = () => {
     return (
         <div>
             {
-                options.map(option => <li key={option.id}><Link>{option.name}</Link></li>)
+                options.map(option =>
+                    <li key={option.id}>
+                        <Link to={`/courses/${option.id}`}>{option.name}</Link>
+                    </li>)
             }
         </div>
     );
