@@ -17,7 +17,7 @@ const CourseDetail = () => {
 
                     <p>{detail}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary"><Link>Get Premium Access</Link></button>
+                        <button className="btn btn-primary"><Link to='/premium'>Get Premium Access</Link></button>
                     </div>
                 </div>
             </div>
