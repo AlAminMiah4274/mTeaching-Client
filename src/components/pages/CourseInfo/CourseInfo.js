@@ -3,7 +3,6 @@ import React from 'react';
 const CourseInfo = ({ course }) => {
 
     const { img, name, detail } = course;
-    console.log(course);
 
     return (
         <div>
