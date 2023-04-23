@@ -6,6 +6,7 @@ import Courses from "../../components/pages/Courses/Courses";
 import Home from "../../components/Home/Home";
 import CourseDetail from "../../components/pages/CourseDetail/CourseDetail";
 import PremiumServicePage from "../../components/pages/PremiumServicePage/PremiumServicePage";
+import Blog from "../../components/Blog/Blog";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
             {
                 path: '/premium/:id',
                 element: <PremiumServicePage></PremiumServicePage>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     }
