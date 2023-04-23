@@ -10,7 +10,7 @@ const Courses = () => {
     return (
         <div className='container mx-auto'>
             <div className='grid grid-cols-12'>
-                <div className='col-span-8 border-solid border-2 border-yellow-500'>
+                <div className='col-span-8'>
                     <div className='grid grid-cols-2 gap-7 py-5 pl-4'>
                         {
                             courses.map(course => <CourseInfo
@@ -20,7 +20,7 @@ const Courses = () => {
                         }
                     </div>
                 </div>
-                <div className='col-span-4 border-solid border-2 border-sky-500'>
+                <div className='col-span-4 mt-4'>
                     <SideNav></SideNav>
                 </div>
             </div>

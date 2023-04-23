@@ -6,7 +6,7 @@ const CourseInfo = ({ course }) => {
 
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl image-full">
+            <div className="card w-96 bg-base-700 shadow-xl image-full">
                 <figure>
                     <img className='w-96' src={img} alt="Shoes" />
                 </figure>

@@ -4,12 +4,11 @@ import { Link, useLoaderData } from 'react-router-dom';
 const CourseDetail = () => {
 
     const CourseDetailData = useLoaderData();
-    console.log(CourseDetailData);
     const { img, name, detail } = CourseDetailData;
 
     return (
-        <div>
-            <div className="card card-compact w-2/5 mx-auto bg-base-100 shadow-xl">
+        <div className='mt-4'>
+            <div className="card card-compact w-2/5 mx-auto bg-base-900 shadow-2xl">
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
 
@@ -17,7 +16,7 @@ const CourseDetail = () => {
 
                     <p>{detail}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary"><Link to='/premium'>Get Premium Access</Link></button>
+                        <button className="btn btn-primary"><Link to={`/premium/${CourseDetailData.id}`} state={CourseDetailData}>Get Premium Access</Link></button>
                     </div>
                 </div>
             </div>
