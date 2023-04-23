@@ -7,6 +7,7 @@ import Home from "../../components/Home/Home";
 import CourseDetail from "../../components/pages/CourseDetail/CourseDetail";
 import PremiumServicePage from "../../components/pages/PremiumServicePage/PremiumServicePage";
 import Blog from "../../components/Blog/Blog";
+import NotFound from "../../components/Others/NotFound";
 
 export const router = createBrowserRouter([
     {
@@ -44,5 +45,6 @@ export const router = createBrowserRouter([
                 element: <Blog></Blog>
             }
         ]
-    }
+    },
+    { path: '*', element: <NotFound></NotFound> }
 ]);
