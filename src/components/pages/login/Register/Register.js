@@ -4,7 +4,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const Register = () => {
 
-    const { userCreate } = useContext(AuthContext);
+    const { userCreate, userProfileUpdate } = useContext(AuthContext);
 
     // register form controlling
     const handleRegisterForm = (e) => {
@@ -23,10 +23,24 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                updateProfile(name, photoURL);
             })
             .catch(e => {
                 console.error(e);
             })
+    };
+
+    const updateProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        };
+
+        userProfileUpdate(profile)
+            .then(result => {
+                const user = result.user;
+            })
+            .catch(e => console.error(e))
     };
 
     return (
