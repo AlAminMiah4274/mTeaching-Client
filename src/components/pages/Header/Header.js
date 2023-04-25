@@ -4,7 +4,7 @@ import logo from '../../../img/education-icon.png';
 
 const Header = () => {
     return (
-        <div className=''>
+        <div>
             <div className="navbar bg-gray-800">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -26,8 +26,8 @@ const Header = () => {
                             <li><Link>Item 3</Link></li>
                         </ul>
                     </div>
-                    <img className='rounded-full' src={logo} alt="" width={30} />
-                    <Link to='/' className="btn btn-ghost normal-case text-3xl pl-2 font-bold">mTeaching</Link>
+
+                    <Link to='/' className="btn btn-ghost normal-case text-3xl pl-2 font-bold"><img className='rounded-full me-2' src={logo} alt="" width={30} /> mTeaching</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
