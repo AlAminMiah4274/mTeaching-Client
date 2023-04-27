@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../img/education-icon.png';
 import { AuthContext } from '../../../contexts/AuthProvider';
@@ -6,6 +6,7 @@ import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
 
+    const [isShown, setIsShown] = useState(false);
     const { user, userLogOut } = useContext(AuthContext);
 
     const handleLogOut = () => {
@@ -49,20 +50,31 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {
-                        user?.uid ?
-                            <button onClick={handleLogOut} className='me-3'>LogOut</button> :
-                            <Link to='/login' className="me-3">Login</Link>
-                    }
+                    <div>
+                        {
+                            user?.uid ?
+                                <button onClick={handleLogOut} className='me-3'>LogOut</button> :
+                                <Link to='/login' className="me-3">Login</Link>
+                        }
+                    </div>
 
-                    {
-                        user?.photoURL ?
-                            <img className='rounded-full w-11 h-11' src={user?.photoURL} alt="" /> :
-                            <FaUserAlt></FaUserAlt>
-                    }
+                    <div
+                        onMouseEnter={() => { setIsShown(true) }}
+                        onMouseLeave={() => { setIsShown(false) }}
+                    >
+                        {
+                            isShown && <span>{user?.displayName}</span>
+                        }
+                        {
+                            user?.photoURL ?
+                                <img className='rounded-full w-11 h-11' src={user?.photoURL} alt="" />
+                                :
+                                <FaUserAlt></FaUserAlt>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

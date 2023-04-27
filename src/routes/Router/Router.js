@@ -8,6 +8,7 @@ import CourseDetail from "../../components/pages/CourseDetail/CourseDetail";
 import PremiumServicePage from "../../components/pages/PremiumServicePage/PremiumServicePage";
 import Blog from "../../components/Blog/Blog";
 import NotFound from "../../components/Others/NotFound";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -38,7 +39,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/premium/:id',
-                element: <PremiumServicePage></PremiumServicePage>
+                element: <PrivateRoute><PremiumServicePage></PremiumServicePage></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             },
             {
                 path: '/blog',
