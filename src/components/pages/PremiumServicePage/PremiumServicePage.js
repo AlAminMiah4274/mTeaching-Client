@@ -8,7 +8,7 @@ const PremiumServicePage = () => {
 
     return (
         <div>
-            <h1>Premium Course: {name}</h1>
+            <h1 className='text-2xl'> {name}</h1>
         </div>
     );
 };

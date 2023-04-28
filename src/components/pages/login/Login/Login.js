@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../../../img/google.png';
 import github from '../../../../img/GitHub-Mark.png';
@@ -7,6 +7,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 
+    const [error, setError] = useState(null);
     const { userSignIn, providerLogIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -30,11 +31,14 @@ const Login = () => {
         userSignIn(email, password)
             .then(result => {
                 const user = result.user;
+                console.log(user);
                 form.reset();
                 navigate(from, { replace: true });
+                setError('');
             })
             .catch(e => {
                 console.error(e);
+                setError(e.message);
             })
     };
 
@@ -66,9 +70,9 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
-                                </label>
+                            </div>
+                            <div className='text-red-600'>
+                                <span>{error}</span>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
