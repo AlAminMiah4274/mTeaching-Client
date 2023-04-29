@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaDownload } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDetail = () => {
@@ -10,7 +11,10 @@ const CourseDetail = () => {
         <div className='mt-4'>
             <div className="card card-compact w-2/5 mx-auto bg-base-900 shadow-2xl">
                 <div className="card-body">
-                    <h2 className="card-title">{name}</h2>
+                    <div className='flex items-center justify-between'>
+                        <h2 className="card-title">{name}</h2>
+                        <FaDownload className='text-xl'></FaDownload>
+                    </div>
 
                     <img src={img} alt="" />
 
