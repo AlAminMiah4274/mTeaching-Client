@@ -6,7 +6,7 @@ const SideNav = () => {
     const [options, setOptios] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/courses')
+        fetch('https://m-teaching-server.vercel.app/courses')
             .then(res => res.json())
             .then(data => setOptios(data))
     }, []);
